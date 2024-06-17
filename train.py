@@ -224,4 +224,4 @@ for epoch in range(config.epochs):
             utils.save_states('best.pth', generator, discriminator, g_optimizer, d_optimizer, n_iter,path_save)
         utils.save_states('last.pth', generator, discriminator, g_optimizer, d_optimizer, n_iter,path_save)
         progress_bar.set_postfix(g_loss=losses['g_loss'].item(), d_loss=losses['d_loss'].item(),ae_loss1=losses['ae_loss1'].item(), ae_loss2=losses['ae_loss2'].item())
-    # print(f'loss: {loss.item()}, GAN_Loss={GAN_Loss.item()},loss_D={loss_D.item()}, PerceptualLoss: {second_PerceptualLoss.item()},first maskLoss: {first_MaskL1Loss.item()}, Second_maskLoss: {second_MaskL1Loss.item()}')
+    print(f'g_loss: {round(losses['g_loss'].item(),3)}, d_loss={round(losses['d_loss'].item(),3)},ae_loss1={round(losses['ae_loss1'].item(),3)}, ae_loss2: {round(losses['ae_loss2'].item(),3)}')
